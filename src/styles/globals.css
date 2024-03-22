@@ -16,6 +16,11 @@
   --btn: #3673fd;
 }
 
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--bg);
 }
