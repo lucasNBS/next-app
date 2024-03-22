@@ -1,0 +1,14 @@
+.navbar-item-container {
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e5e5e5;
+  font-size: 1rem;
+}
+
+.active {
+  background-color: #fff;
+  color: #333;
+}
