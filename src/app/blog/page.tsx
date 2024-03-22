@@ -1,89 +1,41 @@
-import Image from "next/image";
-import Link from "next/link";
+import Post from "src/components/molecules/Post/Post";
 import style from "src/styles/blog.module.css";
+
+const postsList = [
+  {
+    image: "https://fastly.picsum.photos/id/957/200/300.jpg?hmac=F3765loitD9t1J1HkajK7dC62S6Y_joBxXZPm5uAiSE",
+    date: "05.01.2024",
+    title: "Title",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ut, optio minus ullam commodi assumenda?"
+  },
+  {
+    image: "https://fastly.picsum.photos/id/957/200/300.jpg?hmac=F3765loitD9t1J1HkajK7dC62S6Y_joBxXZPm5uAiSE",
+    date: "05.01.2024",
+    title: "Title",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ut, optio minus ullam commodi assumenda?"
+  },
+  {
+    image: "https://fastly.picsum.photos/id/957/200/300.jpg?hmac=F3765loitD9t1J1HkajK7dC62S6Y_joBxXZPm5uAiSE",
+    date: "05.01.2024",
+    title: "Title",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ut, optio minus ullam commodi assumenda?"
+  }
+]
 
 export default function Blog() {
   return (
     <main className={style["blog-container"]}>
-      <article className={style["card-container"]}>
-        <div className={style["card-image-container"]}>
-          <Image
-            src="https://fastly.picsum.photos/id/957/200/300.jpg?hmac=F3765loitD9t1J1HkajK7dC62S6Y_joBxXZPm5uAiSE"
-            alt="Forest"
-            fill
+      {postsList.map((post, index) => {
+        return (
+          <Post
+            image={post.image}
+            date={post.date}
+            title={post.title}
+            description={post.description}
+            key={index}
           />
-          <span className={style["card-date"]}>05.01.2024</span>
-        </div>
-        <h3 className={style["card-title"]}>Title</h3>
-        <p className={style["card-description"]}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, repellat. Temporibus dolores quod aliquam, quia eius inventore in eos necessitatibus pariatur magnam fugit ad! Natus, labore. Enim suscipit eligendi illo?
-        </p>
-        <Link className={style["card-link"]} href="/">Read More</Link>
-      </article>
-
-      <article className={style["card-container"]}>
-        <div className={style["card-image-container"]}>
-          <Image
-            src="https://fastly.picsum.photos/id/957/200/300.jpg?hmac=F3765loitD9t1J1HkajK7dC62S6Y_joBxXZPm5uAiSE"
-            alt="Forest"
-            fill
-          />
-          <span className={style["card-date"]}>05.01.2024</span>
-        </div>
-        <h3 className={style["card-title"]}>Title</h3>
-        <p className={style["card-description"]}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, repellat. Temporibus dolores quod aliquam, quia eius inventore in eos necessitatibus pariatur magnam fugit ad! Natus, labore. Enim suscipit eligendi illo?
-        </p>
-        <Link className={style["card-link"]} href="/">Read More</Link>
-      </article>
-
-      <article className={style["card-container"]}>
-        <div className={style["card-image-container"]}>
-          <Image
-            src="https://fastly.picsum.photos/id/957/200/300.jpg?hmac=F3765loitD9t1J1HkajK7dC62S6Y_joBxXZPm5uAiSE"
-            alt="Forest"
-            fill
-          />
-          <span className={style["card-date"]}>05.01.2024</span>
-        </div>
-        <h3 className={style["card-title"]}>Title</h3>
-        <p className={style["card-description"]}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, repellat. Temporibus dolores quod aliquam, quia eius inventore in eos necessitatibus pariatur magnam fugit ad! Natus, labore. Enim suscipit eligendi illo?
-        </p>
-        <Link className={style["card-link"]} href="/">Read More</Link>
-      </article>
-
-      <article className={style["card-container"]}>
-        <div className={style["card-image-container"]}>
-          <Image
-            src="https://fastly.picsum.photos/id/957/200/300.jpg?hmac=F3765loitD9t1J1HkajK7dC62S6Y_joBxXZPm5uAiSE"
-            alt="Forest"
-            fill
-          />
-          <span className={style["card-date"]}>05.01.2024</span>
-        </div>
-        <h3 className={style["card-title"]}>Title</h3>
-        <p className={style["card-description"]}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, repellat. Temporibus dolores quod aliquam, quia eius inventore in eos necessitatibus pariatur magnam fugit ad! Natus, labore. Enim suscipit eligendi illo?
-        </p>
-        <Link className={style["card-link"]} href="/">Read More</Link>
-      </article>
-
-      <article className={style["card-container"]}>
-        <div className={style["card-image-container"]}>
-          <Image
-            src="https://fastly.picsum.photos/id/957/200/300.jpg?hmac=F3765loitD9t1J1HkajK7dC62S6Y_joBxXZPm5uAiSE"
-            alt="Forest"
-            fill
-          />
-          <span className={style["card-date"]}>05.01.2024</span>
-        </div>
-        <h3 className={style["card-title"]}>Title</h3>
-        <p className={style["card-description"]}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, repellat. Temporibus dolores quod aliquam, quia eius inventore in eos necessitatibus pariatur magnam fugit ad! Natus, labore. Enim suscipit eligendi illo?
-        </p>
-        <Link className={style["card-link"]} href="/">Read More</Link>
-      </article>
+        )
+      })}
     </main>
   )
 }

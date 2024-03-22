@@ -1,0 +1,25 @@
+.data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.data-title {
+  color: var(--btn);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.data-text {
+  color: var(--text-soft);
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 550px) {
+  .data-title, .data-text {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Input from "src/components/atoms/Input/Input";
 import style from "src/styles/contact.module.css";
 
 export default function Contact() {
@@ -8,9 +9,9 @@ export default function Contact() {
         <Image src="/contact.png" alt="A persona filling a form" fill loading="eager" />
       </div>
       <form className={style["contact-form-container"]}>
-        <input className={style["form-input"]} type="text" placeholder="Full Name" />
-        <input className={style["form-input"]} type="email" placeholder="Email address" />
-        <input className={style["form-input"]} type="tel" placeholder="Phone Number (optional)" />
+        <Input type="text" placeholder="Full Name" />
+        <Input type="email" placeholder="Email address" />
+        <Input type="tel" placeholder="Phone Number (optional)" />
         <textarea className={style["form-textarea"]} placeholder="Message"></textarea>
         <button className={style["form-button"]}>Send</button>
       </form>

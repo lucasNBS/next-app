@@ -1,5 +1,21 @@
 import style from "src/styles/about.module.css";
 import Image from "next/image";
+import DataBox from "src/components/atoms/DataBox/DataBox";
+
+const dataList = [
+  {
+    title: "10+",
+    text: "Years of Experience"
+  },
+  {
+    title: "10+",
+    text: "Years of Experience"
+  },
+  {
+    title: "10+",
+    text: "Years of Experience"
+  }
+]
 
 export default function About() {
   return (
@@ -10,18 +26,9 @@ export default function About() {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores officia nesciunt esse ratione similique at consectetur totam, minus et rerum, nam impedit, eligendi eos distinctio quae perspiciatis. Laboriosam, nulla labore.
         </p>
         <div className={style["about-data-container"]}>
-          <div className={style["data-container"]}>
-            <span className={style["data-title"]}>10+</span>
-            <span className={style["data-text"]}>Years of Experience</span>
-          </div>
-          <div className={style["data-container"]}>
-            <span className={style["data-title"]}>10+</span>
-            <span className={style["data-text"]}>Years of Experience</span>
-          </div>
-          <div className={style["data-container"]}>
-            <span className={style["data-title"]}>10+</span>
-            <span className={style["data-text"]}>Years of Experience</span>
-          </div>
+          {dataList.map((item, index) => {
+            return <DataBox title={item.title} text={item.text} key={index} />
+          })}
         </div>
       </div>
       <div className={style["about-image-container"]}>

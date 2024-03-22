@@ -1,0 +1,7 @@
+.form-input {
+  background-color: var(--bg-soft);
+  width: 100%;
+  padding: 1rem;
+  border-radius: 4px;
+  color: var(--text-soft);
+}
