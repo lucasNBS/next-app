@@ -1,0 +1,60 @@
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+.home-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  flex: 1;
+}
+
+.home-content-title {
+  font-size: 6rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.home-content-text {
+  font-size: 1rem;
+  color: var(--text-soft);
+}
+
+.home-buttons-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home-button {
+  cursor: pointer;
+  background-color: var(--text-soft);
+  width: 120px;
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--bg-soft);
+  font-weight: 700;
+}
+.home-button.main {
+  background-color: var(--btn);
+  color: var(--text-soft);
+}
+
+.home-brands-container {
+  position: relative;
+  width: 500px;
+  height: 50px;
+  filter: grayscale(1);
+}
+
+.home-image-container {
+  position: relative;
+  aspect-ratio: 1/1;
+  flex: 1;
+}
