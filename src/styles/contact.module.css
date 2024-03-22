@@ -43,3 +43,12 @@
   font-size: 1rem;
   font-weight: 700;
 }
+
+@media screen and (max-width: 850px) {
+  .contact-image-container {
+    display: none;
+  }
+  .contact-form-container {
+    height: calc(100vh - 300px);
+  }
+}

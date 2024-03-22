@@ -23,6 +23,7 @@
 
 .card-image-container > img {
   width: calc(100% - 2rem) !important;
+  object-fit: cover;
 }
 
 .card-date {

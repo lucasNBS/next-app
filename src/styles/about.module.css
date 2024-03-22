@@ -28,6 +28,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 }
 
 .data-container {
@@ -56,4 +57,33 @@
 
 .about-image-container > img {
   object-fit: contain;
+}
+
+@media screen and (max-width: 1200px) {
+  .about-content-title {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .about-image-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .about-data-container {
+    flex-direction: column;
+  }
+
+  .data-title, .data-text {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .about-content-title {
+    font-size: 2rem;
+  }
 }

@@ -24,6 +24,7 @@
 }
 
 .aside-container {
+  background-color: var(--bg);
   position: absolute;
   width: 200px;
   height: calc(100vh - 100px);
@@ -33,6 +34,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 @media screen and (max-width: 850px) {

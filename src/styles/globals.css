@@ -30,8 +30,15 @@ body {
   max-width: 1536px;
   min-height: 100vh;
   margin: auto;
-  padding: 0 50px;
+  padding: 0 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 550px) {
+  .main-container {
+    padding: 0 1.5rem;
+  }
+  
 }

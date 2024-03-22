@@ -49,7 +49,7 @@
 .home-brands-container {
   position: relative;
   width: 500px;
-  height: 50px;
+  aspect-ratio: 10 / 1;
   filter: grayscale(1);
 }
 
@@ -57,4 +57,26 @@
   position: relative;
   aspect-ratio: 1/1;
   flex: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .home-content-title {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .home-image-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .home-content-title {
+    font-size: 2rem;
+  }
+
+  .home-brands-container {
+    width: 100%;
+  }
 }

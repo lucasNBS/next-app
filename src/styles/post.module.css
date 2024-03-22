@@ -31,6 +31,7 @@
 }
 
 .post-data-container {
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -64,4 +65,26 @@
   color: var(--text);
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .post-content-container {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .post-image-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .post-title {
+    font-size: 3rem;
+  }
+
+  .post-text {
+    font-size: 0.875rem;
+  }
 }
