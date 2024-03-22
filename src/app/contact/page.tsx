@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <main className={style["contact-container"]}>
       <div className={style["contact-image-container"]}>
-        <Image src="/contact.png" alt="A persona filling a form" fill loading="eager" />
+        <Image src="/images/contact.png" alt="A persona filling a form" fill priority={true} />
       </div>
       <form className={style["contact-form-container"]}>
         <Input type="text" placeholder="Full Name" />

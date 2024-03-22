@@ -1,37 +1,31 @@
 import Post from "src/components/molecules/Post/Post";
+import prisma from "src/lib/prisma";
 import style from "src/styles/blog.module.css";
 
-const postsList = [
-  {
-    image: "https://fastly.picsum.photos/id/957/200/300.jpg?hmac=F3765loitD9t1J1HkajK7dC62S6Y_joBxXZPm5uAiSE",
-    date: "05.01.2024",
-    title: "Title",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ut, optio minus ullam commodi assumenda?"
-  },
-  {
-    image: "https://fastly.picsum.photos/id/957/200/300.jpg?hmac=F3765loitD9t1J1HkajK7dC62S6Y_joBxXZPm5uAiSE",
-    date: "05.01.2024",
-    title: "Title",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ut, optio minus ullam commodi assumenda?"
-  },
-  {
-    image: "https://fastly.picsum.photos/id/957/200/300.jpg?hmac=F3765loitD9t1J1HkajK7dC62S6Y_joBxXZPm5uAiSE",
-    date: "05.01.2024",
-    title: "Title",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ut, optio minus ullam commodi assumenda?"
-  }
-]
+async function getPosts() {
+  "use server"
 
-export default function Blog() {
+  try {
+    const posts = await prisma.post.findMany()
+    return posts
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export default async function Blog() {
+  const posts = await getPosts()
+
   return (
     <main className={style["blog-container"]}>
-      {postsList.map((post, index) => {
+      {posts?.map((post, index) => {
         return (
           <Post
-            image={post.image}
-            date={post.date}
+            image={post.img}
+            date={post.createdAt}
             title={post.title}
             description={post.description}
+            id={post.id}
             key={index}
           />
         )

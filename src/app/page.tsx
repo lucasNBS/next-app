@@ -14,11 +14,11 @@ export default function Home() {
           <button className={style["home-button"]}>Contact</button>
         </div>
         <div className={style["home-brands-container"]}>
-          <Image src="/brands.png" alt="Brands logos" fill loading="eager" />
+          <Image src="/images/brands.png" alt="Brands logos" fill priority={true} />
         </div>
       </div>
       <div className={style["home-image-container"]}>
-        <Image src="/hero.gif" alt="People assembling a lamp" fill loading="eager" />
+        <Image src="/images/hero.gif" alt="People assembling a lamp" fill priority={true} />
       </div>
     </main>
   )

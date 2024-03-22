@@ -32,7 +32,7 @@ export default function About() {
         </div>
       </div>
       <div className={style["about-image-container"]}>
-        <Image src="/about.png" alt="A person analyzing some data" fill loading="eager" />
+        <Image src="/images/about.png" alt="A person analyzing some data" fill priority={true} />
       </div>
     </main>
   )
