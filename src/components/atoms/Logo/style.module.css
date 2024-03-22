@@ -1,5 +1,11 @@
 .logo-container {
-  color: #fff;
+  color: var(--text);
   font-size: 2rem;
+  font-weight: 700;
+}
+
+.logo-container-secondary {
+  color: grey;
+  font-size: 1rem;
   font-weight: 700;
 }

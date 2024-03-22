@@ -5,7 +5,7 @@ import Navbar from "src/components/molecules/Navbar/Navbar";
 export default function Header() {
   return (
     <header className={style["header-container"]}>
-      <Logo />
+      <Logo main />
       <Navbar />
     </header>
   )

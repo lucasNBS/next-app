@@ -15,10 +15,10 @@
 
 .aside-button {
   cursor: pointer;
-  background-color: #e5e5e5;
+  background-color: var(--text-soft);
   padding: 0.5rem 0.75rem;
   display: none;
-  color: #333;
+  color: var(--bg-soft);
   font-size: 1rem;
   font-weight: 600;
 }
