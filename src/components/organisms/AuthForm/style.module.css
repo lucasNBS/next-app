@@ -17,6 +17,12 @@
   font-weight: 700;
 }
 
+.form-error {
+  text-align: center;
+  color: #db2831;
+  font-size: 0.75rem;
+}
+
 .form-button {
   cursor: pointer;
   background-color: var(--btn);

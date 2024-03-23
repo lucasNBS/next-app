@@ -5,10 +5,14 @@ import NavbarItem from "./NavbarItem/NavbarItem";
 import style from "./style.module.css";
 import { defaultLinks } from "./array";
 import { useState } from "react";
+import { User } from "src/types/user";
 
-export default function Navbar() {
+type NavbarProps = {
+  user: User
+}
+
+export default function Navbar({ user }: NavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const isAdmin = true
 
   return (
     <>
@@ -18,8 +22,8 @@ export default function Navbar() {
             <NavbarItem text={link.text} path={link.path} key={index} />
           )
         })}
-        {isAdmin && <NavbarItem text="Admin" path="/admin" />}
-        <LoginButton />
+        {user?.isAdmin && <NavbarItem text="Admin" path="/admin" />}
+        <LoginButton user={user} />
       </nav>
       <button
         className={style["aside-button"]}
@@ -35,8 +39,8 @@ export default function Navbar() {
                 <NavbarItem text={link.text} path={link.path} key={index} />
               )
             })}
-            {isAdmin && <NavbarItem text="Admin" path="/admin" />}
-            <LoginButton />
+            {user?.isAdmin && <NavbarItem text="Admin" path="/admin" />}
+            <LoginButton user={user} />
           </nav>
         </aside>
       )}
