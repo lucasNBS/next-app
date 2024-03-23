@@ -1,0 +1,12 @@
+.warning {
+  width: 100%;
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 0.875rem;
+}
+
+.warning a {
+  color: var(--btn);
+  font-weight: 700;
+  text-transform: capitalize;
+}

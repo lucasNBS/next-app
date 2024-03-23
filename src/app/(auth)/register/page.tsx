@@ -4,11 +4,20 @@ import AuthForm from "src/components/organisms/AuthForm/AuthForm";
 import prisma from "src/lib/prisma";
 import bcrypt from "bcrypt";
 import { AuthFormState } from "src/types/user";
+import Warning from "src/components/organisms/AuthForm/Warning/Warning";
 
 async function handleRegister(state: AuthFormState, form: FormData): Promise<AuthFormState> {
   "use server"
 
-  const { username, email, password } = Object.fromEntries(form)
+  const { username, image, email, password } = Object.fromEntries(form)
+
+  if (
+    String(username).trim() === ""||
+    String(email).trim() === "" ||
+    String(password).trim() === ""
+  ) {
+    return { success: false, error: true, message: "Invalid values" }
+  }
 
   try {
     const user = await prisma.user.findUnique({ where: { email: String(email) } })
@@ -20,6 +29,7 @@ async function handleRegister(state: AuthFormState, form: FormData): Promise<Aut
 
     const userData = {
       username: String(username),
+      img: String(image),
       email: String(email),
       password: hashedPassword
     }
@@ -35,8 +45,14 @@ async function handleRegister(state: AuthFormState, form: FormData): Promise<Aut
 export default function Register() {
   return (
     <main className={style["register-container"]}>
-      <AuthForm title="Register" action={handleRegister} redirectUrl="/login">
+      <AuthForm
+        title="Register"
+        action={handleRegister}
+        redirectUrl="/login"
+        warning={<Warning text="Already has an account?" link="login" />}
+      >
         <Input type="text" name="username" placeholder="Username" styleType="auth" />
+        <Input type="text" name="image" placeholder="Profile Picture URL" styleType="auth" />
         <Input type="email" name="email" placeholder="Email" styleType="auth" />
         <Input type="password" name="password" placeholder="Password" styleType="auth" />
       </AuthForm>

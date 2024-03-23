@@ -11,9 +11,16 @@ type AuthFormProps = {
   redirectUrl: string
   action: (state: AuthFormState, form: FormData) => Promise<AuthFormState>
   children: ReactNode
+  warning: JSX.Element
 }
 
-export default function AuthForm({ title, redirectUrl, action, children }: AuthFormProps) {
+export default function AuthForm({
+  title,
+  redirectUrl,
+  action,
+  children,
+  warning
+}: AuthFormProps) {
   const [state, formAction] = useFormState(action, {
     success: false,
     error: false,
@@ -31,6 +38,7 @@ export default function AuthForm({ title, redirectUrl, action, children }: AuthF
       {children}
       {state.error && <span className={style["form-error"]}>{state.message}</span>}
       <button className={style["form-button"]}>{title}</button>
+      {warning}
     </form>
   )
 }
