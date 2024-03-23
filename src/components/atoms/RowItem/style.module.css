@@ -1,0 +1,37 @@
+.row-item-container {
+  background-color: var(--bg-soft);
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row-item-data-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.image.user {
+  border-radius: 100%;
+}
+
+.row-item-title {
+  max-width: 100px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.row-item-delete {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.125rem;
+  background-color: #9d0b12;
+  color: var(--text);
+}

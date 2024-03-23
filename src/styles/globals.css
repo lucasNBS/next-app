@@ -36,6 +36,22 @@ body {
   justify-content: space-between;
 }
 
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #dfd6d6cc; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: #687075cc; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #687075aa;
+}
+
 @media screen and (max-width: 550px) {
   .main-container {
     padding: 0 1.5rem;

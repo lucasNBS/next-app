@@ -9,9 +9,9 @@ export default function Contact() {
         <Image src="/images/contact.png" alt="A persona filling a form" fill priority={true} />
       </div>
       <form className={style["contact-form-container"]}>
-        <Input type="text" placeholder="Full Name" />
-        <Input type="email" placeholder="Email address" />
-        <Input type="tel" placeholder="Phone Number (optional)" />
+        <Input name="fullname" type="text" placeholder="Full Name" />
+        <Input name="email" type="email" placeholder="Email address" />
+        <Input name="pnone" type="tel" placeholder="Phone Number (optional)" />
         <textarea className={style["form-textarea"]} placeholder="Message"></textarea>
         <button className={style["form-button"]}>Send</button>
       </form>
