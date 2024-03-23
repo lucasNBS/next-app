@@ -5,3 +5,7 @@
   border-radius: 4px;
   color: var(--text-soft);
 }
+
+.form-input.auth {
+  background-color: var(--bg);
+}
