@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "./prisma";
 import bcrypt from "bcrypt";
-import { User } from "src/types/user";
+import { authConfig } from "./auth.config";
 
 async function login(credentials: Partial<Record<string, unknown>>) {
   try {
@@ -23,6 +23,7 @@ async function login(credentials: Partial<Record<string, unknown>>) {
 
 
 export const { auth, signIn, signOut } = NextAuth({
+  ...authConfig,
   providers: [
     CredentialsProvider({
       async authorize(credentials): Promise<any> {
@@ -37,18 +38,6 @@ export const { auth, signIn, signOut } = NextAuth({
     })
   ],
   callbacks: {
-    async jwt({ token, user }) {
-      
-      if (user) {
-        token.user = user
-      }
-
-      return token
-    },
-    async session({ session, token }) {
-      session.user = token.user as User
-
-      return session
-    }
+    ...authConfig.callbacks
   }
 })
