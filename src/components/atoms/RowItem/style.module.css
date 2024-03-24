@@ -27,11 +27,3 @@
   color: var(--text);
   font-size: 1rem;
 }
-
-.row-item-delete {
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 0.125rem;
-  background-color: #9d0b12;
-  color: var(--text);
-}

@@ -2,10 +2,10 @@ import style from "src/styles/login.module.css";
 import AuthForm from "src/components/organisms/AuthForm/AuthForm";
 import Input from "src/components/atoms/Input/Input";
 import { signIn } from "src/lib/auth";
-import { AuthFormState } from "src/types/user";
+import { FormState } from "src/types/form";
 import Warning from "src/components/organisms/AuthForm/Warning/Warning";
 
-async function handleLogin(state: AuthFormState, form: FormData): Promise<AuthFormState> {
+async function handleLogin(state: FormState, form: FormData): Promise<FormState> {
   "use server"
 
   const { email, password } = Object.fromEntries(form)

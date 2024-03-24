@@ -22,7 +22,7 @@ export default function Post({ image, date, title, description, id }: PostProps)
         <span className={style["card-date"]}>{date.toDateString().slice(4)}</span>
       </div>
       <h3 className={style["card-title"]}>{title}</h3>
-      <p className={style["card-description"]}>{description}</p>
+      <p className={style["card-description"]}>{description.slice(0, 50)}</p>
       <Link className={style["card-link"]} href={`/blog/${id}`} prefetch={false}>Read More</Link>
     </article>
   )

@@ -1,0 +1,8 @@
+.select-container {
+  background-color: var(--bg-soft);
+  width: 100%;
+  height: 47px;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  color: var(--text-soft);
+}

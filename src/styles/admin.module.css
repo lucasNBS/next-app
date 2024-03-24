@@ -39,23 +39,6 @@
   overflow-y: auto;
 }
 
-.form-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 1.25rem;
-}
-
-.form-button {
-  cursor: pointer;
-  background-color: var(--btn);
-  padding: 1rem;
-  border-radius: 0.25rem;
-  color: var(--text);
-  font-weight: 700;
-}
-
 @media screen and (max-width: 850px) {
   .section-container {
     flex-direction: column;

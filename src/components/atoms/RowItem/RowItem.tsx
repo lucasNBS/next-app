@@ -1,13 +1,35 @@
+import prisma from "src/lib/prisma";
+import Button from "../Button/Button";
 import style from "./style.module.css";
 import Image from "next/image";
+import { revalidatePath } from "next/cache";
 
 type RowItemProps = {
   title: string
   image: string | null
   type: "post" | "user"
+  id: number
 }
 
-export default function RowItem({ title, image, type }: RowItemProps) {
+async function remove(type: "post" | "user", id: number) {
+  "use server"
+
+  if (type === "post") {
+    await prisma.post.delete({ where: { id: Number(id) } })  
+  }
+
+  if (type === "user") {
+    await prisma.user.delete({ where: { id: Number(id) } })  
+    await prisma.post.deleteMany({ where: { authorId: Number(id) } })  
+  }
+
+  revalidatePath("/admin")
+}
+
+
+export default function RowItem({ title, image, type, id }: RowItemProps) {
+  const handleRemove = remove.bind(null, type, id)
+
   return (
     <div className={style["row-item-container"]}>
       <div className={style["row-item-data-container"]}>
@@ -20,7 +42,7 @@ export default function RowItem({ title, image, type }: RowItemProps) {
         />
         <span className={style["row-item-title"]}>{title}</span>
       </div>
-      <button className={style["row-item-delete"]}>Delete</button>
+      <Button click={handleRemove} />
     </div>
   )
 }

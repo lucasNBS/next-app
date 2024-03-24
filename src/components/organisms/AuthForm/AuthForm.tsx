@@ -3,13 +3,13 @@
 import { ReactNode, useEffect } from "react";
 import style from "./style.module.css";
 import { useFormState } from "react-dom";
-import { AuthFormState } from "src/types/user";
+import { FormState } from "src/types/form";
 import { useRouter } from "next/navigation";
 
 type AuthFormProps = {
   title: string
   redirectUrl: string
-  action: (state: AuthFormState, form: FormData) => Promise<AuthFormState>
+  action: (state: FormState, form: FormData) => Promise<FormState>
   children: ReactNode
   warning: JSX.Element
 }
