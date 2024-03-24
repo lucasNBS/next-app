@@ -2,7 +2,7 @@ import prisma from "src/lib/prisma";
 import Button from "../Button/Button";
 import style from "./style.module.css";
 import Image from "next/image";
-import { revalidatePath } from "next/cache";
+import { revalidateTag } from "next/cache";
 
 type RowItemProps = {
   title: string
@@ -23,7 +23,7 @@ async function remove(type: "post" | "user", id: number) {
     await prisma.post.deleteMany({ where: { authorId: Number(id) } })  
   }
 
-  revalidatePath("/admin")
+  revalidateTag("get-posts")
 }
 
 

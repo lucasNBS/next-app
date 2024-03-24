@@ -43,3 +43,13 @@ export async function getPosts() {
 
   return posts
 }
+
+export async function getPost(id: number) {
+  try {
+    const post = await fetch(`http://localhost:3000/api/posts/${id}`).then(res => res.json())
+  
+    return post
+  } catch (err) {
+    console.log(err)
+  }
+}

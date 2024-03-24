@@ -19,7 +19,7 @@ export default function Post({ image, date, title, description, id }: PostProps)
           alt="Forest"
           fill
         />
-        <span className={style["card-date"]}>{date.toDateString().slice(4)}</span>
+        <span className={style["card-date"]}>{new Date(date).toDateString().slice(4)}</span>
       </div>
       <h3 className={style["card-title"]}>{title}</h3>
       <p className={style["card-description"]}>{description.slice(0, 50)}</p>

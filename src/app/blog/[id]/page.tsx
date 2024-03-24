@@ -1,19 +1,7 @@
+import style from "src/styles/post.module.css";
 import Image from "next/image";
 import { redirect } from "next/navigation";
-import prisma from "src/lib/prisma";
-import style from "src/styles/post.module.css";
-
-async function getPost(id: number) {
-  "use server"
-
-  try {
-    const post = await prisma.post.findUnique({ where: { id }, include: { author: true } })
-  
-    return post
-  } catch (err) {
-    console.log(err)
-  }
-}
+import { getPost } from "src/actions/posts";
 
 type PostProps = {
   params: {
@@ -55,7 +43,7 @@ export default async function Post({ params }: PostProps) {
           <div className={style["post-data"]}>
             <span className={style["post-data-title"]}>Published</span>
             <span className={style["post-data-text"]}>
-              {post.createdAt.toDateString().slice(4)}
+              {new Date(post.createdAt).toDateString().slice(4)}
             </span>
           </div>
         </div>
