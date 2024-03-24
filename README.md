@@ -12,4 +12,5 @@ Funcionalidades do Next JS
 . Rotas de API
 . Server Actions
 . Server Components e Client Components
-.
+. Parallel routes
+. Intercepting routes
