@@ -1,4 +1,5 @@
 .login-button-container {
+  cursor: pointer;
   background-color: var(--text-soft);
   padding: 0.5rem 0.75rem;
   color: var(--bg-soft);

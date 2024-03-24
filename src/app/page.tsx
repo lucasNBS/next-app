@@ -18,7 +18,9 @@ export default function Home() {
         </div>
       </div>
       <div className={style["home-image-container"]}>
-        <Image src="/images/hero.gif" alt="People assembling a lamp" fill priority={true} />
+        <video autoPlay muted loop playsInline>
+          <source src="/videos/hero.webm" type="video/webm" />
+        </video>
       </div>
     </main>
   )

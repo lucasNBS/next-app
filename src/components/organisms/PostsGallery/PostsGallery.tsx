@@ -15,6 +15,7 @@ export default async function PostsGallery() {
             title={post.title}
             description={post.description}
             id={post.id}
+            index={index}
             key={index}
           />
         )

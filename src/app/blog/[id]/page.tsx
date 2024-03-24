@@ -23,6 +23,7 @@ export default async function Post({ params }: PostProps) {
           src={post.img ? post.img : "/images/noimage.jpg"}
           alt="Post image"
           fill
+          sizes="(max-width: 850px) 0vw, (max-width: 1200px) 50vw, 33vw"
           priority={true}
         />
       </div>

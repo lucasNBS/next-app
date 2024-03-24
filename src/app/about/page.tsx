@@ -32,7 +32,13 @@ export default function About() {
         </div>
       </div>
       <div className={style["about-image-container"]}>
-        <Image src="/images/about.png" alt="A person analyzing some data" fill priority={true} />
+        <Image
+          src="/images/about.png"
+          alt="A person analyzing some data"
+          fill
+          sizes="(max-width: 850px) 0vw, 50vw"
+          priority={true}
+        />
       </div>
     </main>
   )

@@ -11,12 +11,3 @@
   color: #db2831;
   font-size: 0.75rem;
 }
-
-.form-button {
-  cursor: pointer;
-  background-color: var(--btn);
-  padding: 1rem;
-  border-radius: 0.25rem;
-  color: var(--text);
-  font-weight: 700;
-}

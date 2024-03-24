@@ -59,6 +59,10 @@
   flex: 1;
 }
 
+.home-image-container video {
+  width: 100%
+}
+
 @media screen and (max-width: 1200px) {
   .home-content-title {
     font-size: 4rem;

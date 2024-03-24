@@ -1,7 +1,13 @@
 .button-container {
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 0.125rem;
-  background-color: #9d0b12;
+  background-color: var(--btn);
+  padding: 1rem;
+  border-radius: 0.25rem;
   color: var(--text);
+  font-weight: 700;
+}
+
+.delete {
+  padding: 0.5rem 1rem;
+  background-color: #9d0b12;
 }

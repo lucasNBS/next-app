@@ -16,6 +16,12 @@
   animation: rotate 1.5s ease-in-out infinite;
 }
 
+.small {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-width: 0.25rem;
+}
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);

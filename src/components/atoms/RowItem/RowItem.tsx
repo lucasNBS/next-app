@@ -42,7 +42,7 @@ export default function RowItem({ title, image, type, id }: RowItemProps) {
         />
         <span className={style["row-item-title"]}>{title}</span>
       </div>
-      <Button click={handleRemove} />
+      <Button text="Delete" type="delete" click={handleRemove} />
     </div>
   )
 }
