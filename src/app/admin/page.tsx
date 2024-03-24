@@ -1,35 +1,24 @@
+import style from "src/styles/admin.module.css";
+import { Suspense } from "react";
 import { handleRegister } from "src/actions/auth";
 import { handleCreate } from "src/actions/posts";
 import Input from "src/components/atoms/Input/Input";
-import RowItem from "src/components/atoms/RowItem/RowItem";
+import Loading from "src/components/atoms/Loading/Loading";
 import Select from "src/components/atoms/Select/Select";
 import Textarea from "src/components/atoms/Textarea/Textarea";
+import AdminPosts from "src/components/molecules/AdminPosts/AdminPosts";
+import AdminUsers from "src/components/molecules/AdminUsers/AdminUsers";
 import Form from "src/components/molecules/Form/Form";
-import prisma from "src/lib/prisma";
-import style from "src/styles/admin.module.css";
 
 export default async function Admin() {
-  const posts = await prisma.post.findMany()
-  const users = await prisma.user.findMany()
-  
   return (
     <main className={style["admin-container"]}>
       <section className={style["section-container"]}>
         <div className={style["section-list-container"]}>
           <h2 className={style["section-list-title"]}>Post</h2>
-          <div className={style["section-list"]}>
-            {posts.map((post, index) => {
-              return (
-                <RowItem
-                  type="post"
-                  image={post.img}
-                  title={post.title}
-                  id={post.id}
-                  key={index}
-                />
-              )
-            })}
-          </div>
+          <Suspense fallback={<Loading />}>
+            <AdminPosts />
+          </Suspense>
         </div>
         <div className={style["section-form-container"]}>
           <h2 className={style["section-list-title"]}>Post Form</h2>
@@ -44,19 +33,9 @@ export default async function Admin() {
       <section className={style["section-container"]}>
         <div className={style["section-list-container"]}>
           <h2 className={style["section-list-title"]}>Users</h2>
-          <div className={style["section-list"]}>
-            {users.map((user, index) => {
-              return (
-                <RowItem
-                  type="user"
-                  image={user.img}
-                  title={user.username}
-                  id={user.id}
-                  key={index}
-                />
-              )
-            })}
-          </div>
+          <Suspense fallback={<Loading />}>
+            <AdminUsers />
+          </Suspense>
         </div>
         <div className={style["section-form-container"]}>
           <h2 className={style["section-list-title"]}>Users Form</h2>

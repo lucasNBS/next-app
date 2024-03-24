@@ -1,0 +1,16 @@
+.section-list {
+  width: 100%;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 850px) {
+  .section-list {
+    max-height: 300px;
+  }
+}

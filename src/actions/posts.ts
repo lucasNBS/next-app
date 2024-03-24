@@ -1,6 +1,6 @@
 "use server"
 
-import { revalidatePath } from "next/cache";
+import { revalidateTag } from "next/cache";
 import { auth } from "src/lib/auth";
 import prisma from "src/lib/prisma";
 import { FormState } from "src/types/form";
@@ -27,10 +27,19 @@ export async function handleCreate(state: FormState, form: FormData): Promise<Fo
     }
 
     await prisma.post.create({ data: postData })
-    revalidatePath("/")
+    revalidateTag("get-posts")
     return { success: true, error: false, message: "" }
   } catch (err) {
     console.log(err)
     return { success: false, error: true, message: "Something went wrong" }
   }
+}
+
+
+export async function getPosts() {
+  const posts = await fetch("http://localhost:3000/api/posts", {
+    next: { tags: ["get-posts"] }
+  }).then(res => res.json())
+
+  return posts
 }

@@ -9,7 +9,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 2rem;
 }
 
@@ -28,17 +28,6 @@
   font-weight: 700;
 }
 
-.section-list {
-  width: 100%;
-  max-height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 1rem;
-  overflow-y: auto;
-}
-
 @media screen and (max-width: 850px) {
   .section-container {
     flex-direction: column;
@@ -46,9 +35,5 @@
 
   .section-list-container, .section-form-container {
     width: 100%;
-  }
-
-  .section-list {
-    max-height: 300px;
   }
 }
