@@ -4,6 +4,7 @@ import prisma from "src/lib/prisma"
 import { FormState } from "src/types/form"
 import bcrypt from "bcrypt";
 import { revalidateTag } from "next/cache";
+import { signIn } from "src/lib/auth";
 
 export async function handleRegister(state: FormState, form: FormData): Promise<FormState> {
   const { username, image, email, password, admin } = Object.fromEntries(form)
@@ -38,5 +39,24 @@ export async function handleRegister(state: FormState, form: FormData): Promise<
   } catch (err) {
     console.log(err)
     return { success: false, error: true, message: "Something went wrong" }
+  }
+}
+
+export async function handleLogin(state: FormState, form: FormData): Promise<FormState> {
+  const { email, password } = Object.fromEntries(form)
+
+  if (String(email).trim() === "" || String(password).trim() === "") {
+    return { success: false, error: true, message: "Invalid values" }
+  }
+
+  try {
+    await signIn("credentials", { email, password })
+    return { success: true, error: false, message: "" }
+  } catch (err: any) {
+    if (err.message.includes("CredentialsSignin")) {
+      return { success: false, error: true, message: "Email or password wrong" }
+    }
+
+    throw err
   }
 }

@@ -26,10 +26,6 @@ export const authConfig = {
         return false
       }
 
-      if (request.nextUrl?.pathname.startsWith("/blog") && !user) {
-        return false
-      }
-
       if (request.nextUrl?.pathname.startsWith("/login") && user) {
         return Response.redirect(new URL("/", request.nextUrl))
       }
